@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wisata Jepang</title>
+    <link rel="stylesheet" href="homestyle.css">
+</head>
+<body>
+    <header>
+        <h1>Objek Wisata Populer di Jepang</h1>
+        <p>Temukan berbagai objek wisata menarik di Jepang yang wajib kamu kunjungi!</p>
+    </header>
+
+    <main class="gallery">
+        <!-- Akihabara -->
+        <div class="card" onclick="showDetails('akihabara')">
+            <img src="https://wallpaperaccess.com/full/5510906.jpg" alt="Akihabara">
+            <h2>Akihabara</h2>
+            <p>Pusat budaya pop Jepang dan elektronik di Tokyo.</p>
+        </div>
+        <!-- Gunung Fuji -->
+        <div class="card" onclick="showDetails('gunungFuji')">
+            <img src="https://images.hdqwalls.com/download/mount-fuji-mesmerising-view-4k-r1-2880x1800.jpg" alt="Gunung Fuji">
+            <h2>Gunung Fuji</h2>
+            <p>Ikon Jepang, terletak di Pulau Honshu dengan pemandangan menakjubkan.</p>
+        </div>
+        <!-- Yokohama -->
+        <div class="card" onclick="showDetails('yokohama')">
+            <img src="https://www.gotokyo.org/en/destinations/beyond-tokyo/images/main_pc_yokohama.jpg" alt="Yokohama">
+            <h2>Yokohama</h2>
+            <p>Kota pelabuhan modern dengan Landmark Tower dan Minato Mirai.</p>
+        </div>
+        <!-- Osaka -->
+        <div class="card" onclick="showDetails('osaka')">
+            <img src="https://media.timeout.com/images/105263310/image.jpg" alt="Osaka">
+            <h2>Osaka</h2>
+            <p>Dikenal dengan kuliner khas, Universal Studios, dan Kastil Osaka.</p>
+        </div>
+    </main>
+
+    <section id="details-section" class="details">
+        <!-- Dynamic content will be inserted here -->
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Wisata Jepang. All rights reserved.</p>
+        <a href="#top">Kembali ke atas</a>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Show details dynamically based on image clicked
+        function showDetails(city) {
+            let details = '';
+            switch (city) {
+                case 'akihabara':
+                    details = `
+                        <img src="https://wallpaperaccess.com/full/5510906.jpg" alt="Akihabara">
+                        <div class="info">
+                            <h2>Deskripsi Akihabara</h2>
+                            <p>Akihabara adalah distrik yang terkenal di Tokyo, Jepang, sebagai surga belanja elektronik, manga, dan anime. Dengan banyaknya toko teknologi, kafe bertema, dan suasana unik, Akihabara menjadi destinasi favorit bagi pecinta teknologi dan budaya Jepang.</p>
+                            <ul>
+                                <li>Estimasi harga tiket pesawat: <b>IDR 5.000.000</b></li>
+                                <li>Durasi perjalanan: <b>7 jam</b></li>
+                                <li>Biaya penginapan per malam: <b>IDR 2.000.000</b></li>
+                            </ul>
+                            <button onclick="buyNow()">Beli Sekarang</button>
+                        </div>`;
+                    break;
+                case 'gunungFuji':
+                    details = `
+                        <img src="https://images.hdqwalls.com/download/mount-fuji-mesmerising-view-4k-r1-2880x1800.jpg" alt="Gunung Fuji">
+                        <div class="info">
+                            <h2>Deskripsi Gunung Fuji</h2>
+                            <p>Gunung Fuji adalah gunung tertinggi di Jepang dan merupakan ikon negara ini. Terletak di Pulau Honshu, gunung ini menawarkan pemandangan alam yang menakjubkan, terutama saat musim semi saat bunga sakura mekar di sekitarnya. Gunung Fuji juga menjadi tujuan populer bagi para pendaki.</p>
+                            <ul>
+                                <li>Estimasi harga tiket pesawat: <b>IDR 5.000.000</b></li>
+                                <li>Durasi perjalanan: <b>7 jam</b></li>
+                                <li>Biaya penginapan per malam: <b>IDR 2.000.000</b></li>
+                            </ul>
+                            <button onclick="buyNow()">Beli Sekarang</button>
+                        </div>`;
+                    break;
+                case 'yokohama':
+                    details = `
+                        <img src="https://www.gotokyo.org/en/destinations/beyond-tokyo/images/main_pc_yokohama.jpg" alt="Yokohama">
+                        <div class="info">
+                            <h2>Deskripsi Yokohama</h2>
+                            <p>Yokohama adalah kota pelabuhan terbesar di Jepang, terletak hanya 30 menit dari Tokyo. Dikenal dengan pemandangan menakjubkan dari Landmark Tower dan kawasan Minato Mirai yang futuristik, Yokohama adalah destinasi yang sempurna untuk menjelajahi berbagai atraksi.</p>
+                            <ul>
+                                <li>Estimasi harga tiket pesawat: <b>IDR 5.000.000</b></li>
+                                <li>Durasi perjalanan: <b>7 jam</b></li>
+                                <li>Biaya penginapan per malam: <b>IDR 2.000.000</b></li>
+                            </ul>
+                            <button onclick="buyNow()">Beli Sekarang</button>
+                        </div>`;
+                    break;
+                case 'osaka':
+                    details = `
+                        <img src="https://media.timeout.com/images/105263310/image.jpg" alt="Osaka">
+                        <div class="info">
+                            <h2>Deskripsi Osaka</h2>
+                            <p>Osaka terkenal dengan kuliner khas seperti takoyaki dan okonomiyaki, serta berbagai tempat wisata menarik seperti Universal Studios dan Kastil Osaka. Kota ini juga menawarkan kehidupan malam yang berwarna dan berbagai tempat belanja.</p>
+                            <ul>
+                                <li>Estimasi harga tiket pesawat: <b>IDR 5.500.000</b></li>
+                                <li>Durasi perjalanan: <b>7 jam</b></li>
+                                <li>Biaya penginapan per malam: <b>IDR 2.000.000</b></li>
+                            </ul>
+                            <button onclick="buyNow()">Beli Sekarang</button>
+                        </div>`;
+                    break;
+            }
+
+            document.getElementById('details-section').innerHTML = details;
+        }
+
+        // Buy now functionality
+        function buyNow() {
+            alert("Terima kasih telah memilih wisata! Kami akan segera menghubungi Anda.");
+        }
+    </script>
+</body>
+</html>
